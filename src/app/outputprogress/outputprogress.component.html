@@ -15,6 +15,60 @@
 
     <div id=dashboardDiv >
             THE DASHBOARD AREA
+            <table>
+                <tr>
+                    <td><div> <input class="inputBox centered" type="text" placeholder="Enter The GITHUB Repository Link"> </div></td>
+                </tr>
+
+
+                <tr>
+                    <td class="tableToolDataAnalysisPage">
+                        <input type="checkbox"> <label>PMD</label>
+                        <select class="select-css" disabled>
+                                <option value="pmd" selected="selected">Default</option>
+                        </select>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td class="tableToolDataAnalysisPage">
+                        <input type="checkbox"> <label>Style Check</label>
+                        <select class="select-css" disabled>
+                            <option value="google_checks" selected="selected">Google Check</option>
+                            <option value="sun_checks">Sun Check</option>
+                        </select>
+                        <label>Use Test Files ?</label>
+                        <div>
+                                <input name="checkStyleYN" type="radio"><label>YES</label>
+                                <input name="checkStyleYN" type="radio" checked><label>NO</label>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="tableToolDataAnalysisPage">
+                        <input type="checkbox"> <label>Simian</label>
+                        <select class="select-css" disabled>
+                        <option value="simian" selected="selected">Percentage Similarity</option>
+                        </select>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="tableToolDataAnalysisPage">
+
+                        <button class="buttonType1">Analyze</button>
+
+                    </td>
+                </tr>
+
+
+            </table>
+            
 
     </div>
 
