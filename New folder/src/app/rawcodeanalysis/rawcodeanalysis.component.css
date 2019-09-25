@@ -1,0 +1,73 @@
+
+  .toolbar {
+    height: 80px;
+    margin: -8px;
+    display: flex;
+    align-items: center; 
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+
+  /*************************************************************************************
+                  Separating The Boxes of DIV
+ **************************************************************************************/
+ .separate {
+    padding: 1px;
+    margin: 1px;
+  }
+
+/*************************************************************************************
+                  CSS for Centered Boxes
+ **************************************************************************************/
+
+ .centered {
+     text-align: center;
+     align-content: center;
+
+ }
+
+
+
+ /*************************************************************************************
+                  Separating The Boxes of DIV
+ **************************************************************************************/
+.rawCodeBoxDiv{
+ width: 60%;
+ height: 500px;
+ position: static;
+ cursor: default;
+ opacity: 1;
+ margin: 7% 20px 20px;
+ padding: 25px;
+ overflow: auto;
+ border: 1px solid #b7b7b7;
+ -webkit-border-radius: 3px;
+ border-radius: 7px;
+ font: normal 20px/normal "Times New Roman", Times, serif;
+ color: rgba(49,164,206,1);
+ background: rgba(69,162,224,0.26);
+ -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+ box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+ text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+ -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+ -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+ -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+ transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+ -webkit-transform: none;
+ transform: none;
+ -webkit-transform-origin: 50% 50% 0;
+ transform-origin: 50% 50% 0;
+}
