@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../rest.service';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-project-list',
@@ -8,7 +9,7 @@ import { RestService } from '../rest.service';
 })
 export class ProjectListComponent implements OnInit {
 
-  projectlist : any;
+  @Input() projectlist : any;
 
   constructor(private restservice: RestService) { }
 

@@ -1,6 +1,6 @@
 <button class="btn btn-success" (click)="onSubmit()">Get Project List</button>
 <div class="container-fluid">
-        <a *ngFor="let item of projectlist" class="displayproject"  [routerLink]="['/progressreport']"  ><br>{{item.name}}<br></a>
+        <a *ngFor="let item of projectlist" class="displayproject"  [routerLink]="['/progressreport']" [state]=item  ><br>{{item.name}}<br></a>
 </div>
 
 

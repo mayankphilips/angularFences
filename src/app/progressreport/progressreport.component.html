@@ -1,1 +1,54 @@
-<p>progressreport works!</p>
+<div class="container-fluid statusreport">
+
+      <button class="btn btn-primary" (click)="onClickGetStatus()">Get Status Report</button>
+
+    
+     <!--{{projectstatus.report}} 
+    <div>{{projectstatus.status}}</div>-->
+    <table>
+            <tr>
+                    <th>Status : {{projectstatus.status}}</th>
+                    
+            </tr>
+    </table>
+
+    <div *ngFor="let param of report">
+       <b> {{param.name}} </b>
+        <br>
+       &nbsp;&nbsp;&nbsp; ErrorsThen: {{param.r.errorsThen}}
+        <br>
+        &nbsp;&nbsp;&nbsp; ErrorsNow: {{param.r.errorsNow}}
+        <br>
+        &nbsp;&nbsp;&nbsp;  PercentageChenge:  {{param.r.percentageChange}}
+        <br>
+    </div>
+
+
+<!-- 
+<div *ngFor="let t of Object.keys(projectstatus)">
+    <span>{{projectstatus[t].status}}</span>
+    <br>
+    <div *ngFor="let param of Object.keys(projectstatus[t].report)">
+        <span>{{param}}</span>
+        <div *ngFor="let option of tools[t].parameters[param].values">
+            <input type="checkbox" name="{{param}}" value="{{option}}" (click) = "setValue(tools[t].toolname, param, option,link)" /> {{option}}
+            <br>
+        </div>
+    </div>
+</div> -->
+
+</div>
+
+<!-- <div *ngFor="let t of objectKeys(tools)">
+                <span>{{tools[t].toolname}}</span>
+                <br>
+                <span>{{tools[t].description}}</span>
+                <br>
+                <div *ngFor="let param of objectKeys(tools[t].parameters)">
+                    <span>{{param}}</span>
+                    <div *ngFor="let option of tools[t].parameters[param].values">
+                        <input type="checkbox" name="{{param}}" value="{{option}}" (click) = "setValue(tools[t].toolname, param, option,link)" /> {{option}}
+                        <br>
+                    </div>
+                </div>
+            </div> -->

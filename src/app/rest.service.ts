@@ -1,6 +1,7 @@
 import { Injectable, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Project } from './sources/project';
 
 @Injectable()
 export class RestService
@@ -16,10 +17,16 @@ export class RestService
         }
         return this.http.post(this.githubUrl, inputData, {headers: stuff});
     }
-    getProjectList(){
-     return this.http.get(this.githubUrl);
+
+    getProjectList() : Observable<Project[]>{
+     return this.http.get<Project[]>(this.githubUrl);
     }
     getTools() {
         return this.http.get('http://localhost:8080/fences/api/project/tool');
+    }
+    getProgressReport(pname:any){
+        let url = 'http://localhost:8080/fences/api/project/' + pname + '/fence'
+
+        return this.http.get(url);
     }
 }
