@@ -12,10 +12,20 @@ export class RestService
 
     getInputs(inputData:any): Observable<any>{
         console.log(inputData);
-        let stuff = {
-            responseType: "text/plain"
-        }
-        return this.http.post(this.githubUrl, inputData, {headers: stuff});
+       
+
+  
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    
+  }),
+  responseType:'text' as 'text'
+};
+
+
+        return this.http.post(this.githubUrl, inputData,httpOptions);
     }
 
     getProjectList() : Observable<Project[]>{
@@ -24,9 +34,19 @@ export class RestService
     getTools() {
         return this.http.get('http://localhost:8080/fences/api/project/tool');
     }
-    getProgressReport(pname:any){
+    getFenceReport(pname:any){
         let url = 'http://localhost:8080/fences/api/project/' + pname + '/fence'
 
         return this.http.get(url);
+    }
+    getReport(pname:any){
+        let url = 'http://localhost:8080/fences/api/project/' + pname + '/report'
+
+        return this.http.get(url);
+    }
+    deleteProject(pname:any){
+        let url = 'http://localhost:8080/fences/api/project/' + pname 
+
+        return this.http.delete(url);
     }
 }

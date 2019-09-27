@@ -1,0 +1,263 @@
+
+  .toolbar {
+    height: 80px;
+    margin: -8px;
+    display: flex;
+    align-items: center; 
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+
+  .inputRepo{
+      align-content: center;
+      background: skyblue;
+      width: 60%;
+  }
+
+
+ /*************************************************************************************
+                  Separating The Boxes of DIV
+ **************************************************************************************/
+  .separate {
+    padding: 1px;
+    margin: 1px;
+  }
+
+/*************************************************************************************
+                  CSS for Centered Boxes
+ **************************************************************************************/
+
+ .centered {
+     text-align: center;
+
+ }
+
+
+ /*************************************************************************************
+                  CSS for Separator Horizontal
+ **************************************************************************************/
+
+ .dottedSeparatorLine{
+     width: 70%;
+
+    }
+
+
+ /*************************************************************************************
+                  CSS for Buttons
+ **************************************************************************************/
+ .buttonType1 {
+	-moz-box-shadow: 0px -1px 0px 0px #f0f7fa;
+	-webkit-box-shadow: 0px -1px 0px 0px #f0f7fa;
+	box-shadow: 0px -1px 0px 0px #f0f7fa;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+	background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+	background-color:#33bdef;
+	-moz-border-radius:35px;
+	-webkit-border-radius:35px;
+	border-radius:35px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:24px;
+	font-weight:bold;
+	padding:11px 25px;
+	text-decoration:none;
+	text-shadow:3px 6px 3px #5b6178;
+}
+.buttonType1:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+	background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+	background-color:#019ad2;
+}
+.buttonType1:active {
+	position:relative;
+	top:1px;
+}
+
+    
+ 
+ /*************************************************************************************
+                  CSS for Separator Text-Input
+ **************************************************************************************/           
+
+ .inputBox {
+  display: inline-block;
+  width: 50%;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 20px;
+  padding: 10px 50px;
+  border: 2px solid #b7b7b7;
+  -webkit-border-radius: 21px;
+  border-radius: 21px;
+  font: normal 20px/0 "Times New Roman", Times, serif;
+  color: rgba(0,142,198,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(69,162,224,0.26);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+  -webkit-transition: background-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  -moz-transition: background-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  -o-transition: background-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: background-color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+
+ /*************************************************************************************
+                  CSS for Welcome Box
+ **************************************************************************************/ 
+
+.tableForChoicePage{
+  margin-left: 40%;
+
+}
+
+.tableForChoicePage td{
+
+  padding: 25px;
+}
+
+
+
+
+
+
+
+  /*************************************************************************************
+                  CSS for Separator Text-Input
+ **************************************************************************************/  
+.welcomeBoxDiv{
+
+  margin-top: 10%;
+}
+
+
+#welcomeText{
+
+  
+}
+
+
+
+
+
+
+
+
+  /*************************************************************************************
+                  CSS for Separator Text-Input
+ **************************************************************************************/  
+
+
+
+
+
+
+
+
+
+
+
+
+  /*************************************************************************************
+                  CSS for Separator Text-Input
+ **************************************************************************************/  
+
+
+
+
+
+
+
+
+  /*************************************************************************************
+                  CSS for Separator Text-Input
+ **************************************************************************************/  
+
+
+/* .uploadRepoDiv{
+    height: auto; 
+    width: 440px; 
+    padding: 30px 30px 30px 30px; 
+    margin: 68px auto -60px auto; 
+    display: block; 
+    background: #FFFFFF; 
+    display: block;
+}
+
+
+.dottedSeparator{
+    text-align: center;
+    margin: 5px;
+    display: block;
+    background: red;
+}
+
+
+#masterDiv {
+    background-color:pink;
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+}
+
+
+#dashboardDiv {
+    background-color:grey;
+    float: left;
+    height: 100%;
+    width: 30%;
+    border-radius: 5px;
+    display: block;
+}
+
+
+#reportMainDiv {
+    background-color:skyblue;
+    float: right;
+    height: 100%;
+    width: 70%;
+    overflow-y: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+
+.reportDiv {
+    border-radius: 10px;
+    border:skyblue;
+    margin: 10px;
+    min-height: 100px;
+    overflow-y: auto;
+    overflow-x: auto;
+    display: block;
+} */

@@ -1,27 +1,54 @@
 <div class="container-fluid statusreport">
 
-      <button class="btn btn-primary" (click)="onClickGetStatus()">Get Status Report</button>
+      <button class="btn btn-primary ButtonMargin" (click)="onClickGetStatus()">Fence Project</button> 
+      <button class="btn btn-primary ButtonMargin" (click)="onClickGetReport()">Get Report</button>
+      <button class="btn btn-primary ButtonMargin" (click)="onClickGetDelete()">Delete Project</button>
 
-    
-     <!--{{projectstatus.report}} 
-    <div>{{projectstatus.status}}</div>-->
-    <table>
-            <tr>
-                    <th>Status : {{projectstatus.status}}</th>
-                    
-            </tr>
-    </table>
+      <br><b> {{projectstatus.status}}</b><br>
+      <div *ngFor="let param of report">
+           
+            <br>
+            <b><b> {{param.name}} </b></b>
+             <br>
+            &nbsp;&nbsp;&nbsp; ErrorsThen: {{param.r.errorsThen}}
+             <br>
+             &nbsp;&nbsp;&nbsp; ErrorsNow: {{param.r.errorsNow}}
+             <br>
+             &nbsp;&nbsp;&nbsp;  PercentageChange:  {{param.r.percentageChange}}
+             <br>
+       </div>
+</div>
+<div>
+    <div *ngFor="let item of objectkeys(pReport)">
+            <b>Tool Name: {{item}}</b><br>
+            <div *ngFor="let l of objectkeys(pReport[item].report)">
+                <b>{{l}}</b><br>
+                <div *ngFor="let bb of pReport[item].report[l]">
+                    <b>{{bb.line}}</b><br>
+                    <b>{{bb.priority}}</b><br>
+                    <b>{{bb.message}}</b><br>
+            </div>
+        </div>
+    </div> 
+</div>
+<!-- <div>
 
-    <div *ngFor="let param of report">
-       <b> {{param.name}} </b>
-        <br>
-       &nbsp;&nbsp;&nbsp; ErrorsThen: {{param.r.errorsThen}}
-        <br>
-        &nbsp;&nbsp;&nbsp; ErrorsNow: {{param.r.errorsNow}}
-        <br>
-        &nbsp;&nbsp;&nbsp;  PercentageChenge:  {{param.r.percentageChange}}
-        <br>
-    </div>
+    <div *ngFor="let item of objectkeys(pReport)">
+        <b>Tool Name: {{item}}</b><br>
+        <div *ngFor="let l of objectkeys(pReport[item].report)">
+            <b>{{l}}</b><br>
+            <div *ngFor="let bb of pReport[item].report[l]">
+                <b>{{bb.line}}</b><br>
+                <b>{{bb.priority}}</b><br>
+                <b>{{bb.message}}</b><br>
+            </div>
+        </div>
+    </div>       
+</div> -->
+
+  
+
+   
 
 
 <!-- 
@@ -37,7 +64,7 @@
     </div>
 </div> -->
 
-</div>
+
 
 <!-- <div *ngFor="let t of objectKeys(tools)">
                 <span>{{tools[t].toolname}}</span>

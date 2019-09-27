@@ -33,10 +33,10 @@ export class OutputprogressComponent implements OnInit {
   selecttools : string;
   selectpercentage : string;
   enabled: boolean = true;
-
+  pcreate:any;
   onAnalyze(){
     
-   this.restservice.getInputs(this.request).subscribe(data=>{console.log(data)});
+   this.restservice.getInputs(this.request).subscribe(data=>{this.pcreate=data});
    
   }
 

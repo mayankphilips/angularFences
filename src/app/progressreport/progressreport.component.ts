@@ -3,6 +3,8 @@ import { ProjectListComponent } from '../project-list/project-list.component';
 import { Location, JsonPipe } from '@angular/common';
 import { RestService } from '../rest.service';
 import { ProjectReport } from '../sources/projectreport';
+// import {MdDialog, MdDialogRef} from '@angular/material';
+
 @Component({
   selector: 'app-progressreport',
   templateUrl: './progressreport.component.html',
@@ -14,7 +16,7 @@ export class ProgressreportComponent implements OnInit {
   projectstatus: ProjectReport;
 
   report: any[]
-
+  pReport :any;
   objectkeys = Object.keys;
 
 
@@ -22,6 +24,7 @@ export class ProgressreportComponent implements OnInit {
 
   constructor(private location: Location, public restservice: RestService) {
     //this.projectstatus= {};
+
   }
 
 
@@ -31,14 +34,7 @@ export class ProgressreportComponent implements OnInit {
   }
 
   onClickGetStatus() {
-
-    // return this.restservice.getProgressReport(url).subscribe(data=>{this.projectstatus=data});
-    // return this.restservice.getProgressReport(url).subscribe(data=>{
-    //   console.log("data" +data)
-    //   this.projectstatus=data
-    //   console.log("status"+this.projectstatus)});
-    //return this.restservice.getProgressReport(url).subscribe(data=>{console.log(data)});
-    return this.restservice.getProgressReport(this.projectname.name).subscribe((data: ProjectReport) => {
+    return this.restservice.getFenceReport(this.projectname.name).subscribe((data: ProjectReport) => {
       this.projectstatus = data
       let r = this.objectkeys(data['report']);
       this.report = []
@@ -52,5 +48,15 @@ export class ProgressreportComponent implements OnInit {
     });
   }
 
+  onClickGetReport(){
+    // var ugly = document.getElementById('tx').value;
+    // var obj = JSON.parse(ugly);
+    return this.restservice.getReport(this.projectname.name).subscribe((data) => this.pReport=(data)
+  );
+  //window.open('C:\fences\data\apollo-link-state-example-master\report.json');
+  }
 
+  onClickGetDelete(){
+    return this.restservice.deleteProject(this.projectname.name).subscribe((data)=>{console.log(data)});
+  }
 }

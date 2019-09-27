@@ -1,0 +1,151 @@
+<div class="container-fluid centered">
+
+
+  <form #formRef="ngForm" (ngSubmit)="dataDecoder(toolSelectionModel)" novalidate>
+
+    <div class="form-group" id="dashboardDiv">
+
+      <table class="tableUploadPage">
+        <tr>
+          <td class="tableToolDataAnalysisPage">
+            <div>
+
+              <input type="url" #linkRef="ngModel" class="inputBox centered"
+                [class.is-invalid]="linkRef.invalid && linkRef.touched" name="link"
+                [(ngModel)]="toolSelectionModel.link" required pattern=".+\.git"
+                placeholder="Enter The GITHUB Repository Link">
+              <br>
+              <small class="text-danger" [class.d-none]="linkRef.valid || linkRef.untouched">Enter a Valid Github
+                Repository
+                Link</small>
+            </div>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td class="tableToolDataAnalysisPage">
+            <div>
+              <input type="text" name="branch" [(ngModel)]="toolSelectionModel.branch" hidden>
+            </div>
+          </td>
+        </tr>
+
+
+        <fieldset class="reset-this redo-fieldset fldset fullWidth">
+          <legend class="reset-this redo-legend">Checkstyle Tool</legend>
+          <tr>
+            <td class="tableToolDataAnalysisPage fltLeft">
+              <div class="fltLeft">
+                <input class="option-input checkbox fltLeft" name="useCheckstyle" type="checkbox"
+                  [(ngModel)]="toolSelectionModel.useCheckstyle">
+                <!-- <label class="form-check-label">Use Checkstyle</label> -->
+              </div>
+
+              <div class="fltRight">
+                <select class="select-css fltRight" name="styleguide" [(ngModel)]="toolSelectionModel.styleguide">
+                  <option value="google_checks">Google Checks</option>
+                  <option value="sun_checks">Sun Checks</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="tableToolDataAnalysisPage">
+              <div class="fltLeft">
+                <label>
+                  Use Test Files ?
+                </label>
+              </div>
+
+              <div class="fltRight">
+                <input class="option-input radio" type="radio" name="excludeTestFiles" value="yes"
+                  [(ngModel)]="toolSelectionModel.excludeTestFiles">
+                <label class="form-check-label separate">YES</label>
+
+                <input class="option-input radio" type="radio" name="excludeTestFiles" value="no"
+                  [(ngModel)]="toolSelectionModel.excludeTestFiles">
+                <label class="form-check-label separate">NO</label>
+              </div>
+              <div>
+
+              </div>
+
+            </td>
+          </tr>
+        </fieldset>
+
+
+
+
+        <tr>
+          <fieldset class="reset-this redo-fieldset fldset fullWidth">
+            <legend>PMD Tool</legend>
+            <td class="tableToolDataAnalysisPage fltLeft">
+              <div>
+                <input class="option-input checkbox" name="usePMD" type="checkbox"
+                  [(ngModel)]="toolSelectionModel.usePMD">
+                <label class="form-check-label">Use PMD</label>
+              </div>
+            </td>
+          </fieldset>
+        </tr>
+
+
+
+
+        <tr>
+          <td class="tableToolDataAnalysisPage">
+            <div class="form-group" hidden>
+              <input class="form-check mb-3" name="useSimian" type="checkbox"
+                [(ngModel)]="toolSelectionModel.useSimian">
+              <label class="form-check-label">simian</label>
+            </div>
+          </td>
+        </tr>
+
+
+
+
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="lds-hourglass centered"> </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+            <td class="tableToolDataAnalysisPage"></td>
+          </tr>
+
+
+
+        <tr>
+          <td class="tableToolDataAnalysisPage">
+            <button [disabled]="formRef.form.invalid" class="btn btn-primary buttonType1" type="submit">Upload
+              Project</button>
+            <br>
+            <small [class.d-none]="formRef.valid">Please Select Options for Saving</small>
+          </td>
+
+          <td>
+
+
+
+    </td>
+    </tr>
+
+
+    </table>
+
+
+
+</div>
+
+</form>
+</div>

@@ -1,0 +1,41 @@
+<div class="container-fliud">
+
+        <h1>Raw Code Analysis</h1>
+    
+        <form #rawFormRef="ngForm" (ngSubmit)="submitRawCode(rawCodeSelectionModel)" novalidate>
+    
+            <pre> {{ rawCodeSelectionModel | json }} </pre>
+            {{rawFormRef.form.valid}}
+    
+            <div class="form-group">
+                <textarea #textAreaRef="ngModel" class="form-control"
+                    [class.is-invalid]="textAreaRef.invalid && textAreaRef.touched" name="rawCode"
+                    [(ngModel)]="rawCodeSelectionModel.rawCode" required placeholder="Paste Your Code Here">
+                </textarea>
+                <small class="text-danger" [class.d-none]="textAreaRef.valid || textAreaRef.untouched">Enter Some Code for
+                    Analysis</small>
+            </div>
+    
+            <div class="form-check mb-3">
+                <input class="option-input radio" type="radio" name="toolSelected" value="pmd" [(ngModel)]="rawCodeSelectionModel.toolSelected">
+                <label>Use PMD</label>
+            </div>
+    
+            <div class="form-check mb-3">
+                <input class="option-input radio" type="radio" name="toolSelected" value="checkstyle" [(ngModel)]="rawCodeSelectionModel.toolSelected">
+                <label>Use Google Checstyle</label>
+            </div>
+    
+            <div class="form-check mb-3" hidden>
+                <input class="form-check-input" type="radio" name="toolSelected" value="simian" [(ngModel)]="rawCodeSelectionModel.toolSelected">
+                <label>Use Simian</label>
+            </div>
+    
+            <button [disabled]="rawFormRef.form.invalid" class="btn btn-primary buttonType1" type="submit">Analyze Code</button>
+            <br>
+            <small [class.d-none]="rawFormRef.form.valid">Please Input Some Code</small>
+    
+    
+    
+        </form>
+    </div>
