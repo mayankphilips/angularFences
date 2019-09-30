@@ -15,18 +15,11 @@ export class ProgressreportComponent implements OnInit {
   projectname: any;
   projectstatus: ProjectReport;
 
-  report: any[]
-  pReport :any;
+  report: any[];
+  pReport: any;
   objectkeys = Object.keys;
-
-
-  //fenceurl="http://localhost:8080/fences/api/project//fence";
-
   constructor(private location: Location, public restservice: RestService) {
-    //this.projectstatus= {};
-
   }
-
 
   ngOnInit() {
     this.projectname = this.location.getState();
@@ -35,28 +28,25 @@ export class ProgressreportComponent implements OnInit {
 
   onClickGetStatus() {
     return this.restservice.getFenceReport(this.projectname.name).subscribe((data: ProjectReport) => {
-      this.projectstatus = data
-      let r = this.objectkeys(data['report']);
-      this.report = []
-      for (let tool of r) {
+      this.projectstatus = data;
+      const r = this.objectkeys(data.report);
+      this.report = [];
+      for (const tool of r) {
         this.report.push({
           name: tool,
-          r : data['report'][tool]
+          r : data.report[tool]
         });
       }
       console.log(this.report);
     });
   }
 
-  onClickGetReport(){
-    // var ugly = document.getElementById('tx').value;
-    // var obj = JSON.parse(ugly);
-    return this.restservice.getReport(this.projectname.name).subscribe((data) => this.pReport=(data)
+  onClickGetReport() {
+    return this.restservice.getReport(this.projectname.name).subscribe((data) => this.pReport = (data)
   );
-  //window.open('C:\fences\data\apollo-link-state-example-master\report.json');
   }
 
-  onClickGetDelete(){
-    return this.restservice.deleteProject(this.projectname.name).subscribe((data)=>{console.log(data)});
+  onClickGetDelete() {
+    return this.restservice.deleteProject(this.projectname.name).subscribe((data) => {console.log(data); });
   }
 }

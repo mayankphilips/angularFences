@@ -9,15 +9,15 @@ import { Input } from '@angular/core';
 })
 export class ProjectListComponent implements OnInit {
 
-  @Input() projectlist : any;
+  @Input() projectlist: any;
 
   constructor(private restservice: RestService) { }
 
   ngOnInit() {
   }
 
-  onSubmit(){
-    this.restservice.getProjectList().subscribe(data=>{this.projectlist=data});
+  onSubmit() {
+    this.restservice.getProjectList().subscribe(data => {this.projectlist = data ; } );
   }
 
 }

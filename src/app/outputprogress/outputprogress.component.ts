@@ -7,68 +7,51 @@ import { Router } from '@angular/router';
   styleUrls: ['./outputprogress.component.css']
 })
 export class OutputprogressComponent implements OnInit {
-
-  tools = {}
-  objectKeys = Object.keys;
-
-  //@Input()
-  //inputData = { link :" ",branch:"master", tool : "{}" };
-  tool = {};
-  
-  constructor(public restservice: RestService,private router: Router) { 
+constructor(public restservice: RestService, private router: Router) {
     restservice.getTools().subscribe(response => {
       this.tools = response;
     }, error => {
       this.tools = {};
     });
   }
+
+  tools = {};
+  objectKeys = Object.keys;
+  pr: any;
+  tool = {} ;
   request = {
-    link: "",
-    branch: "master",
+    link: '',
+    branch: 'master',
     tool : this.tool
-}
+};
+  selectedcheckstyle: string;
+  selecttools: string;
+  selectpercentage: string;
+  enabled: true;
   ngOnInit() {
   }
-  selectedcheckstyle : string;
-  selecttools : string;
-  selectpercentage : string;
-  enabled: boolean = true;
-  pcreate:any;
-  onAnalyze(){
-    
-   this.restservice.getInputs(this.request).subscribe(data=>{this.pcreate=data});
-   
+
+  onAnalyze() {
+   this.restservice.getInputs(this.request).subscribe(data => {this.pr = data; console.log(data); } );
   }
 
- 
-
-
-
-  selectChangeHandler(event : any){
+  selectChangeHandler(event: any) {
     this.selectedcheckstyle = event.target.value;
     console.log(this.selectedcheckstyle);
   }
 
-  selectpecerntagesimilarity(event : any){
+  selectpecerntagesimilarity(event: any) {
     this.selectpercentage = event.target.value;
     console.log(this.selectpercentage);
   }
-  
-  //selectTool(event:any,value:string){
-  // this.inputData.tool="pmd";
-  //}
-
-  setValue(toolname: string, parameter: string, value: string,link) {
-    if (this.tool[toolname] == undefined)
-      this.tool[toolname] = new Object();
+  setValue(toolname: string, parameter: string, value: string, link) {
+    if (this.tool[toolname] === undefined) {
+      this.tool[toolname] = new Object(); }
 
     this.tool[toolname][parameter] = value;
 
-    this.request.link=link.value;
+    this.request.link = link.value;
     console.log(this.tool);
     console.log(link);
   }
-
- 
-  
 }

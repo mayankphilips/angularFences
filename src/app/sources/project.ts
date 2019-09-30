@@ -3,5 +3,4 @@ name: string;
 projectCreationDate: Date;
 lastBuildDate: Date;
 
-} 
- 
+}

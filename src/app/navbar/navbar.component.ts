@@ -9,12 +9,9 @@ import { RestService } from '../rest.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router,private restservice: RestService) { }
+  constructor(private router: Router, private restservice: RestService) { }
 
   ngOnInit() {
   }
-  
- 
-
 
 }

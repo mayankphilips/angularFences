@@ -15,7 +15,7 @@
 </div> -->
 
 
-<app-navbar></app-navbar>
+
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
 <div class="container-fluid">
 <div class="container-fluid" id=analysisPageMainDiv>
@@ -92,12 +92,12 @@
                     </tr>  -->
 
                 <div *ngFor="let t of objectKeys(tools)">
-                    <span>{{tools[t].toolname}}</span>
+                    <span><b style="font-size: 20px ; text-transform: uppercase">{{tools[t].toolname}}</b></span>
                     <br>
-                    <span>{{tools[t].description}}</span>
+                    <span hidden>{{tools[t].description}}</span>
                     <br>
                     <div *ngFor="let param of objectKeys(tools[t].parameters)">
-                        <span>{{param}}</span>
+                        <span style="text-transform: uppercase">{{param}}</span>
                         <div *ngFor="let option of tools[t].parameters[param].values">
                             <input type="checkbox" name="{{param}}" value="{{option}}" (click) = "setValue(tools[t].toolname, param, option,link)" /> {{option}}
                             <br>
@@ -109,11 +109,11 @@
                     <td class="tableToolDataAnalysisPage">
 
                         <button class="buttonType1" (click)="onAnalyze()">Analyze</button>
-                        <br><b>{{pcreate}}</b><br>
+                        
 
                     </td>
                 </tr> 
-
+                {{pr}}
     </div>
 
     <!-- <div id=reportMainDiv>

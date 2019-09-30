@@ -9,5 +9,5 @@ export class ToolSelection {
         public excludeTestFiles: string,
         public usePMD: boolean,
         public useSimian: boolean,
-    ){}
+    ) {}
 }

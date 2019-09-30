@@ -31,11 +31,24 @@
                 <label>Use Simian</label>
             </div>
     
-            <button [disabled]="rawFormRef.form.invalid" class="btn btn-primary buttonType1" type="submit">Analyze Code</button>
+            <button [disabled]="rawFormRef.form.invalid" class="btn btn-primary buttonType1" (click)="OnClickCodeAnalyze()" type="submit">Analyze Code</button>
             <br>
             <small [class.d-none]="rawFormRef.form.valid">Please Input Some Code</small>
-    
+        
+            <div>
+                <h2> {{pReport.report}}</h2><br>
+                 <div *ngFor="let item of objectkeys(pReport[0])">
+                     {{item}}
+                     <div *ngFor="let p of objectkeys(pReport[0][item])">
+                         <b>{{p.line}}</b><br>
+                         <b>{{p.priority}}</b><br>
+                         <b>{{p.message}}</b><br>
+                     </div>
+                 </div>
+             </div>
+         
     
     
         </form>
     </div>
+   
